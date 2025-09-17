@@ -1,0 +1,655 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Caveat:wght@400;700&family=Lobster&family=Monoton&family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display+SC:ital,wght@0,400;0,700;1,700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Roboto:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,700&family=Work+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    height: 100%;
+    display: flex;
+    font-family: 'Bree Serif', Sans-Serif;
+    overflow-x: hidden;
+    background-color: #f5f6fa;
+}
+
+.container {
+    display: flex;
+}
+
+/* HEADER (NAVBAR) */
+.header {
+    height: 60px;
+    width: 100%;
+    background: #D8FDFF;
+    color: black;
+    box-shadow: 0 0 10px black, 0 0 20px black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+}
+
+.icons-area {
+    margin-left: 38px;
+    display: flex;
+    align-items: center;
+}
+
+
+.avatar-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: -45px;
+}
+
+.student-name {
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 3px;
+}
+
+.notification {
+    position: relative;
+}
+
+.notification-icon {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -8px;
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    padding: 2px 5px;
+    border-radius: 50%;
+}
+
+@media screen and (min-width:768px) {
+    .header {
+        height: 70px;
+    }
+
+    .notification {
+        position: relative;
+    }
+
+    .notification-icon {
+        font-size: 40px;
+        cursor: pointer;
+    }
+
+    .notification-badge {
+        position: absolute;
+        top: -11px;
+        right: -7px;
+        background-color: red;
+        color: white;
+        font-size: 30px;
+        padding: 1px 6px;
+        border-radius: 50%;
+        width: 25px;
+        height: 40px;
+    }
+
+}
+
+@media screen and (min-width:992px) {
+    .header {
+        height: 71px;
+        padding: 51px;
+    }
+
+    .avatar-img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .student-name {
+        font-size: 37px;
+        margin-left: 16px;
+    }
+}
+
+
+
+
+/* SIDEBAR */
+
+
+#sidebarmenu {
+    height: 100%;
+    position: fixed;
+    top: 75px;
+    left: -12px;
+    width: 85px;
+    background: #E6FFB3;
+    z-index: 15;
+    padding: 12px;
+    margin-top: -10px;
+
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin-top: 12px;
+}
+
+.menu li {
+    border-bottom: 17px solid rgba(250, 250, 250, 0.10);
+}
+
+.menu li a {
+    color: black;
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 5px;
+    font-size: 10px;
+}
+
+.menu li a:hover {
+    background-color: #d4f0a0;
+}
+
+.main {
+    margin-top: 100px;
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+}
+
+/* RESPONSIVE BEHAVIOR */
+@media screen and (min-width: 577px) {
+    .sidebaricontoggle {
+        display: none;
+    }
+
+    #opensidebarmenu {
+        display: none;
+    }
+
+    .main {
+        margin-left: 150px;
+    }
+
+    .icons-area {
+        margin-left: 0;
+
+    }
+}
+
+@media screen and (min-width:992px) {
+    #sidebarmenu {
+        width: 180px;
+    }
+
+    .menu li a {
+        padding-top: 12px;
+        font-size: 21px;
+    }
+
+    .menu {
+        padding-top: 41px;
+    }
+
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    min-width: 230px;
+    max-width: 980px;
+    margin-top: -18px;
+    margin-bottom: 12px;
+}
+
+.card {
+    flex: 1 1 200px;
+    background-color: #ffffff;
+    padding: 18px;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease-in-out;
+    margin-left: 60px;
+}
+
+.card:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+}
+
+.gpa {
+    background-color: #CDC1FF;
+}
+
+.attendance {
+    background-color: #E69DB8;
+}
+
+.assignments {
+    background-color: #B0DB9C;
+}
+
+.credits {
+    background-color: #ADEED9;
+}
+
+@media screen and (min-width:992px) {
+    .cards-container {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 22px;
+    }
+
+    .card {
+        min-width: 320px;
+        max-width: 560px;
+        font-size: 25px;
+    }
+}
+
+
+.progress-deadline-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* --- Progress Table --- */
+.progress-table-container {
+    min-width: 200px;
+    max-width: 550px;
+    margin-top: 30px;
+    background-color: #f0f4ff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    overflow-x: auto;
+    margin-left: 55px;
+    margin-bottom: 12px;
+}
+
+.progress-table-container h2 {
+    text-align: center;
+    margin-bottom: 1px;
+    padding-bottom: 14px;
+}
+
+.icon-heading {
+    display: flex;
+    align-items: flex-start;
+}
+
+table {
+    width: 90%;
+    border-collapse: collapse;
+    min-width: 200px;
+    max-width: 600px;
+    background-color: #f0f4ff;
+    border-radius: 18px;
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.progress-bar {
+    background: #ffffff;
+    height: 22px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background: #295F98;
+    color: white;
+    font-size: 12px;
+    text-align: center;
+    line-height: 22px;
+}
+
+.progress-img {
+    width: 30px;
+    height: 30px;
+    margin-right: 6px;
+}
+
+@media screen and (min-width:992px) {
+    .progress-table-container h2 {
+        font-size: 31px;
+    }
+
+    th,
+    td {
+        font-size: 25px;
+    }
+
+    .progress-bar {
+        height: 27px;
+    }
+
+    .progress {
+        font-size: 18px;
+    }
+
+}
+
+
+.deadlines-section {
+    background: #f0f4ff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    min-width: 200px;
+    margin-left: 55px;
+    margin-bottom: 12px;
+
+}
+
+.deadlines-section h2 {
+    display: flex;
+    align-items: center;
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+}
+
+.heading-icon {
+    width: 28px;
+    height: 28px;
+    margin-right: 10px;
+}
+
+.deadlines-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.deadline-item {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 8px;
+    padding: 12px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.date-badge {
+    background-color: #4f8cff;
+    color: white;
+    border-radius: 8px;
+    padding: 10px;
+    margin-right: 16px;
+    text-align: center;
+    font-weight: bold;
+    min-width: 60px;
+}
+
+.date-badge .month {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.date-badge .day {
+    font-size: 1.3rem;
+}
+
+.deadline-details h3 {
+    font-size: 1.1rem;
+}
+
+.deadline-details p {
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 4px;
+}
+
+
+@media screen and (min-width:993px) {
+    .progress-deadline-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .progress-table-container,
+    .deadlines-section {
+        flex: 1;
+    }
+
+    .deadlines-section h2 {
+        font-size: 31px;
+    }
+
+    .date-badge {
+        font-size: 35px;
+    }
+
+    .date-badge .month {
+        font-size: 23px;
+    }
+
+    .date-badge .day {
+        font-size: 20px;
+    }
+
+    .deadline-details h3 {
+        font-size: 21px;
+    }
+
+    .deadline-details p {
+        font-size: 16px;
+    }
+}
+
+
+
+.profile-card {
+    background: #f0f4ff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+    max-width: 1020px;
+    margin-left: 55px;
+}
+
+.profile-card h2 {
+    font-size: 1.6rem;
+    margin-bottom: 16px;
+}
+
+.profile-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.profile-pic img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #ccc;
+}
+
+.profile-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 250px;
+}
+
+.profile-info p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile-info i {
+    color: #4a90e2;
+    width: 20px;
+    text-align: center;
+}
+
+@media screen and (max-width:576px) {
+    .profile-card {
+        text-align: center;
+        padding-bottom: 12px;
+    }
+}
+
+
+@media screen and (min-width:768px) {
+    .profile-card {
+        margin-top: 60px;
+        width: 900px;
+    }
+
+    .profile-content {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .progress-deadline-wrapper {
+        flex: 1 1;
+        margin-top: 40px;
+    }
+
+    .progress-table-container {
+        margin-top: 0;
+    }
+}
+
+@media screen and (min-width:993px) {
+    .profile-card h2 {
+        font-size: 31px;
+    }
+
+    .profile-content {
+        margin-left: 91px;
+        margin-top: 28px;
+    }
+
+    .profile-info {
+        font-size: 21px;
+    }
+}
+
+
+
+
+@media screen and (min-width:768px) and (max-width:992px) {
+    .header {
+        height: 65px;
+        padding: 40px;
+    }
+
+    .avatar-img {
+        margin-left: 1px;
+        width: 55px;
+        height: 55px;
+    }
+
+    .student-name {
+        font-size: 24px;
+        margin-left: 10px;
+    }
+
+    .notification-icon {
+        font-size: 28px;
+    }
+
+    .notification-badge {
+        font-size: 25px;
+        top: -10px;
+        right: -12px;
+        padding: 4px;
+    }
+
+
+    #sidebarmenu {
+        width: 140px;
+        padding-top: 21px;
+    }
+
+    .menu li a {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .main {
+        margin-left: 160px;
+        margin-top: 80px;
+    }
+
+    .cards-container {
+        justify-content: flex-start;
+        gap: 15px;
+        padding-top: 22px;
+    }
+
+    .card {
+        min-width: 250px;
+        max-width: 400px;
+        font-size: 18px;
+        margin-left: 0;
+    }
+
+
+    .progress-deadline-wrapper {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .progress-table-container,
+    .deadlines-section {
+        flex: 1 1 45%;
+        margin-left: 0;
+    }
+
+
+    .profile-card {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 30px;
+    }
+
+    .profile-content {
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 40px;
+    }
+
+    .profile-pic img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .profile-info {
+        font-size: 16px;
+    }
+}
